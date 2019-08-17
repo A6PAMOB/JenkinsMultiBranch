@@ -9,6 +9,9 @@ class TestStudy(unittest.TestCase):
     def test_2(self):
         self.assertTrue('This is a new feature')
 
+    def test_3(self):
+        self.assertTrue(True)
+
 
 if __name__ == '__main__':
     unittest.main()
