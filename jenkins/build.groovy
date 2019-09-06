@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building ...'
                 withMaven "mvn clean"
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Testing ...'
                 withMaven 'mvn test'
             }
         }
         stage('Reporting') {
             steps {
-
+                echo 'Reporting ...'
             }
         }
     }
