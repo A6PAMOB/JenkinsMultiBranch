@@ -5,13 +5,17 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building ...'
-                withMaven "mvn clean"
+                withMaven(maven: 'maven-3') {
+                    sh "mvn clean"
+                }
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing ...'
-                withMaven 'mvn test'
+                withMaven(maven: 'maven-3') {
+                     'mvn test'
+                }
             }
         }
         stage('Reporting') {
