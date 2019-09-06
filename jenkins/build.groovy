@@ -5,23 +5,18 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh '''
-                    python3 -m venv project-venv
-                    . ./project-venv/bin/activate
-                    pip -V
-                    pip list
-                '''
+                withMaven "mvn clean"
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'python3 test.py'
+                withMaven 'mvn test'
             }
         }
-        stage('Deploy') {
+        stage('Reporting') {
             steps {
-                echo 'Deploying....'
+
             }
         }
     }
